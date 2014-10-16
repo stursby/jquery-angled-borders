@@ -4,29 +4,51 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
     * {
         margin: 0;
         padding: 0;
     }
 
-    header {
+    div {
+        max-width: 1000px;
         height: 100px;
-        background: crimson;
-        /*padding: 15px;*/
-        color: white;
+        background: lightgray;
+        margin: 0px auto;
+        text-align: center;
+        line-height: 100px;
+        /*position: relative;*/
     }
+
     </style>
 </head>
 <body>
 
-    <header>header</header>
+    <div>
+    Gimme some border action!
+    </div>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="dist/jquery-angled-border.js"></script>
 
     <script>
 
-        $('header').angledBorder();
+        // $('div').angledBorder({
+        //     height: 50, // in px
+        //     color: 'pink', // or hex
+        //     direction: 'LTR', // or RTL
+        //     position: 'bottom' // or top
+        // });
+
+        $('div').angledBorder();
 
     </script>
 
