@@ -35,7 +35,7 @@
             el.css({ borderColor: el.css('background-color')});
 
             // create border element
-            var border = $('<span class=""/>');
+            var border = $('<span class="angled-border"/>');
 
             // base CSS
             var properties = {
@@ -44,7 +44,7 @@
                 "display": "block",
                 "width": "100%",
                 "background": "transparent",
-                "border-width": "1000px",
+                "border-width": el.width(),
                 "height": settings.height
             };
 
@@ -68,6 +68,16 @@
 
             // set all the properties
             border.css(properties);
+
+            // set border width on window resize
+            $(window).resize(function() {
+                var el = $(border);
+                var $parent = el.parent();
+                var parentWidth = $parent.width();
+                var resizeProperties = {};
+                resizeProperties['border-' + direction + '-width'] = parentWidth;
+                $(border).css(resizeProperties);
+            });
 
             // append styled border
             el.append(border);

@@ -25,7 +25,6 @@
         margin: 0px auto;
         text-align: center;
         line-height: 100px;
-        /*position: relative;*/
     }
 
     </style>
@@ -33,6 +32,12 @@
 <body>
 
     <div>
+    Gimme some border action!
+    </div>
+
+    <br><br><br><br><br>
+
+    <div style="background: pink;">
     Gimme some border action!
     </div>
 
@@ -48,7 +53,12 @@
         //     position: 'bottom' // or top
         // });
 
-        $('div').angledBorder();
+        $('div').eq(0).angledBorder();
+
+        $('div').eq(1).angledBorder({
+            position: 'top',
+            direction: 'RTL'
+        });
 
     </script>
 
