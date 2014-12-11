@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <style>
 
     html {
-      box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        color: #212121;
+        font-size: 18px;
+        line-height: 1.5;
     }
 
     *, *:before, *:after {
-      box-sizing: inherit;
+        box-sizing: inherit;
     }
 
     * {
@@ -18,47 +27,47 @@
         padding: 0;
     }
 
-    div {
-        max-width: 1000px;
-        height: 100px;
-        background: lightgray;
-        margin: 0px auto;
+    header {
+        height: 200px;
+        background: #00bcd4;
+        line-height: 200px;
+        color: #fff;
         text-align: center;
-        line-height: 100px;
+    }
+
+    section {
+        padding: 100px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .pink {
+        background: #FF4081;
+        color: #fff;
     }
 
     </style>
 </head>
 <body>
 
-    <div>
-    Gimme some border action!
-    </div>
+    <header class="angled-border">
+        <h2>jquery-angled-border</h2>
+    </header>
 
-    <br><br><br><br><br>
+    <section>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque amet cupiditate asperiores perspiciatis sit vel natus itaque. Mollitia harum, eos necessitatibus tempore voluptatem temporibus nihil dolores fugit magnam quisquam, dolorem.</p>
+    </section>
 
-    <div style="background: pink;">
-    Gimme some border action!
-    </div>
+    <section class="angled-border pink" data-position="top" data-direction="rtl">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque nemo, sapiente, corporis pariatur blanditiis cumque impedit. Enim ad placeat vel optio ratione ipsam dicta iste, ipsa cumque, dolores culpa animi!</p>
+    </section>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="dist/jquery-angled-border.js"></script>
 
     <script>
 
-        // $('div').angledBorder({
-        //     height: 50, // in px
-        //     color: 'pink', // or hex
-        //     direction: 'LTR', // or RTL
-        //     position: 'bottom' // or top
-        // });
-
-        $('div').eq(0).angledBorder();
-
-        $('div').eq(1).angledBorder({
-            position: 'top',
-            direction: 'RTL'
-        });
+        $('.angled-border').angledBorder();
 
     </script>
 

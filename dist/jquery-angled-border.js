@@ -19,12 +19,13 @@
             direction: 'LTR', // or RTL
             position: 'bottom' // or top
 
-        }, settings = $.extend({}, defaults, options, $(this).data());
+        }, settings = $.extend({}, defaults, options);
 
         this.each(function () {
 
             // cache $(this) var
             var el = $(this);
+            var o = $.extend(true, {}, settings, el.data());
 
             // does element have position relative or absolute?
             if (el.css('position') === 'static') {
@@ -44,14 +45,14 @@
                 "display": "block",
                 "width": "100%",
                 "background": "transparent",
-                "border-width": el.width(),
-                "height": settings.height
+                "border-width": el.outerWidth(),
+                "height": o.height
             };
 
             // change direction to CSS value
             var direction;
 
-            switch(settings.direction.toLowerCase()) {
+            switch(o.direction.toLowerCase()) {
                 case 'ltr':
                     direction = 'left';
                     break;
@@ -61,10 +62,12 @@
             }
 
             // set dynamic properties
-            properties['border-' + direction + '-color'] = settings.color;
+            properties['border-' + direction + '-color'] = o.color;
             properties['border-' + direction + '-style'] = 'solid';
-            properties['border-' + settings.position] = settings.height + "px solid transparent";
-            properties['' + settings.position] = -settings.height;
+            properties['border-' + o.position] = o.height + "px solid transparent";
+            properties['' + o.position] = -o.height;
+            properties['' + direction] = '0px';
+            // properties['right'] = -padding + 'px';
 
             // set all the properties
             border.css(properties);
@@ -73,7 +76,7 @@
             $(window).resize(function() {
                 var el = $(border);
                 var $parent = el.parent();
-                var parentWidth = $parent.width();
+                var parentWidth = $parent.outerWidth();
                 var resizeProperties = {};
                 resizeProperties['border-' + direction + '-width'] = parentWidth;
                 $(border).css(resizeProperties);
