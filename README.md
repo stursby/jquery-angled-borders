@@ -1,4 +1,4 @@
 jQuery Angled Borders
 =====================
 
-** work in progress **
+##[DEMO](http://stursby.github.io/jquery-angled-borders/)
