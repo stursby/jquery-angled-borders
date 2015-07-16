@@ -16,6 +16,11 @@
         color: #212121;
         font-size: 18px;
         line-height: 1.5;
+        margin-bottom: 50px;
+    }
+
+    .wrapper {
+        padding: 20px;
     }
 
     *, *:before, *:after {
@@ -33,34 +38,143 @@
         line-height: 200px;
         color: #fff;
         text-align: center;
+        margin-bottom: 100px;
     }
 
     section {
-        padding: 100px;
         max-width: 1000px;
         margin: 0 auto;
+        margin-bottom: 150px;
     }
 
-    .pink {
-        background: #FF4081;
-        color: #fff;
+    .half {
+        width: 50%;
+        float: left;
+        text-align: center;
+    }
+
+    .half:nth-child(1) {
+        background: #81C784;
+    }
+
+    .half:nth-child(2) {
+        background: #A5D6A7;
+    }
+
+    section > div {
+        background: #00bcd4;
+        width: 100%;
+        height: 50px;
+    }
+
+    section > p {
+        font-size: 14px;
+        margin: 5px 0 15px 0;
+    }
+
+    pre, em {
+        padding: 8px 12px;
+        background: #F5F5F5;
+        margin: 10px 0;
+        font-size: 14px;
+        border-radius: 2px;
+    }
+
+    pre {
+        overflow: scroll;
+    }
+
+    em {
+        padding: 2px 5px;
+        margin: 2px;
+    }
+
+    span.angled-border.help {
+        opacity: 0.5;
+        outline: 1px solid red;
+    }
+
+    button {
+        padding: 5px;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 10;
+        cursor: pointer;
     }
 
     </style>
 </head>
 <body>
 
+    <button>Toggle borders</button>
+
     <header class="angled-border">
         <h2>jquery-angled-border</h2>
     </header>
 
-    <section>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque amet cupiditate asperiores perspiciatis sit vel natus itaque. Mollitia harum, eos necessitatibus tempore voluptatem temporibus nihil dolores fugit magnam quisquam, dolorem.</p>
-    </section>
+    <div class="wrapper">
 
-    <section class="angled-border pink" data-position="top" data-direction="rtl">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque nemo, sapiente, corporis pariatur blanditiis cumque impedit. Enim ad placeat vel optio ratione ipsam dicta iste, ipsa cumque, dolores culpa animi!</p>
-    </section>
+        <section>
+            <h3>Default</h3>
+            <p>The default border is on the bottom, left-to-right, and 30px tall.</p>
+            <pre><code>&lt;div class=&quot;angled-border&quot;&gt;&lt;/div&gt;</code></pre>
+            <div class="angled-border"></div>
+        </section>
+
+        <section>
+            <h3>Direction</h3>
+            <p>The two direction options are <em><code>ltr</code></em> (left to right) and <em><code>rtl</code></em> (right to left). To set the direction, use the <em><code>data-direction</code></em> attribute.</p>
+            <pre><code>&lt;div class=&quot;angled-border&quot; data-direction=&quot;rtl&quot;&gt;&lt;/div&gt;</code></pre></p>
+            <div class="angled-border" data-direction="rtl"></div>
+            <br><br>
+            <pre><code>&lt;div class=&quot;angled-border&quot; data-direction=&quot;ltr&quot;&gt;&lt;/div&gt;</code></pre></p>
+            <div class="angled-border" data-direction="ltr"></div>
+        </section>
+
+        <section>
+            <h3>Position</h3>
+            <p>The two position options are <em><code>top</code></em> and <em><code>bottom</code></em> (right to left). To set the position, use the <em><code>data-position</code></em> attribute.</p>
+            <pre><code>&lt;div class=&quot;angled-border&quot; data-position=&quot;top&quot;&gt;&lt;/div&gt;</code></pre></p>
+            <br>
+            <div class="angled-border" data-position="top"></div>
+            <br>
+            <pre><code>&lt;div class=&quot;angled-border&quot; data-position=&quot;bottom&quot;&gt;&lt;/div&gt;</code></pre></p>
+            <div class="angled-border" data-position="bottom"></div>
+        </section>
+
+        <section>
+            <h3>Height</h3>
+            <p>To set the border height, use the <em><code>data-height</code></em> attribute.</p>
+            <pre><code>&lt;div class=&quot;angled-border&quot; data-height=&quot;10&quot;&gt;&lt;/div&gt;</code></pre></p>
+            <div class="angled-border" data-height="10"></div>
+            <br>
+            <pre><code>&lt;div class=&quot;angled-border&quot; data-height=&quot;100&quot;&gt;&lt;/div&gt;</code></pre></p>
+            <div class="angled-border" data-height="100"></div>
+            <br><br>
+        </section>
+
+        <section>
+            <h3>Color</h3>
+            <p>To set the border color, use the <em><code>data-color</code></em> attribute. Valid color formats include: Hex, RGB, RGBA, or CSS Color Names. By default, the border will inherit its parent’s background color.</p>
+            <p>Some examples: <em><code>#bada55</code></em>, <em><code>rgb(186, 218, 85)</code></em>, <em><code>rgba(186, 218, 85, 0.5)</code></em>, <em><code>YellowGreen</code></em>.</p>
+            <pre><code>&lt;div class=&quot;angled-border&quot; data-color=&quot;#bada55&quot;&gt;&lt;/div&gt;</code></pre></p>
+            <div class="angled-border" data-color="#bada55"></div>
+        </section>
+
+        <section>
+            <h3>More examples</h3>
+            <pre><code>&lt;div class=&quot;angled-border&quot; data-height=&quot;50&quot; data-position=&quot;top&quot; data-direction=&quot;rtl&quot;&gt;&lt;/div&gt;</code></pre>
+            <br><br>
+            <div class="angled-border" data-height="45" data-position="top" data-direction="rtl"></div>
+            <br>
+            <pre><code>&lt;div class=&quot;half angled-border&quot; data-height=&quot;50&quot; data-direction=&quot;rtl&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;half angled-border&quot; data-height=&quot;50&quot;&gt;&lt;/div&gt;</code></pre>
+            <div class="half angled-border" data-height="50" data-direction="rtl"></div>
+            <div class="half angled-border" data-height="50"></div>
+        </section>
+
+    </div>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="dist/jquery-angled-border.js"></script>
@@ -68,6 +182,10 @@
     <script>
 
         $('.angled-border').angledBorder();
+
+        $('button').on('click', function() {
+            $('span.angled-border').toggleClass('help');
+        });
 
     </script>
 
