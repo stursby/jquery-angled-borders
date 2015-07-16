@@ -1,0 +1,27 @@
+{
+  "name": "jquery-angled-border",
+  "version": "0.0.1",
+  "homepage": "https://github.com/stursby/jquery-angled-borders",
+  "authors": [
+    "Charlie Hield <charles.hield@gmail.com>"
+  ],
+  "description": "Add angled borders to anything!",
+  "main": "./dist/jquery-angled-border.js",
+  "keywords": [
+    "jQuery",
+    "angled",
+    "borders",
+    "css"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}
